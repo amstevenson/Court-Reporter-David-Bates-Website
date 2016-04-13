@@ -42,59 +42,59 @@ include_once("includes/header.php");
 
                     <div class="col-md-8">
 
-                        <form action="#" method="post">
+                        <form action="scripts/schedule_online_mail.php" method="post">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="name" class="sr-only">Email</label>
-                                    <input placeholder="Name *" id="name" type="text" class="form-control input-lg">
+                                    <label for="name" class="sr-only">Name</label>
+                                    <input placeholder="Name *" name='name' id="name" type="text" class="form-control input-lg">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="email" class="sr-only">Email</label>
-                                    <input placeholder="Email *" id="email" type="text" class="form-control input-lg">
+                                    <input placeholder="Email *" name='email' id="email" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="phone" class="sr-only">Phone Number</label>
-                                    <input placeholder="Phone Number *" id="phone" type="number" class="form-control input-lg">
+                                    <input placeholder="Phone Number *" name="phone" id="phone" type="number" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="altPhone" class="sr-only">Alternative Phone Number</label>
-                                    <input placeholder="Alternative Phone Number" id="altPhone" type="number" class="form-control input-lg">
+                                    <input placeholder="Alternative Phone Number" name="altPhone" id="altPhone" type="number" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="address" class="sr-only">Address</label>
-                                    <input placeholder="Address" id="address" type="text" class="form-control input-lg">
+                                    <input placeholder="Address" name="address" id="address" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="city" class="sr-only">City</label>
-                                    <input placeholder="City" id="city" type="text" class="form-control input-lg">
+                                    <input placeholder="City" name="city" id="city" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="state" class="sr-only">State</label>
-                                    <input placeholder="State" id="state" type="text" class="form-control input-lg">
+                                    <input placeholder="State" name="state" id="state" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="service" class="sr-only">Service</label>
-                                    <select id="service" class="form-control input-lg">
+                                    <select id="service" name="service" class="form-control input-lg">
                                         <option value="0">Select Service</option>
                                         <option value="1">Depositions</option>
                                         <option value="2">Sworn Statements</option>
@@ -108,105 +108,105 @@ include_once("includes/header.php");
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="attorneyName" class="sr-only">Attorneys Name</label>
-                                    <input placeholder="Attorneys Name" id="attorneyName" type="text" class="form-control input-lg">
+                                    <input placeholder="Attorneys Name" name="attorneyName" id="attorneyName" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="lawFirmName" class="sr-only">Law Firm Name</label>
-                                    <input placeholder="Law Firm Name" id="lawFirmName" type="text" class="form-control input-lg">
+                                    <input placeholder="Law Firm Name" name="lawFirmName" id="lawFirmName" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="caseName" class="sr-only">Case Name</label>
-                                    <input placeholder="Case Name" id="caseName" type="text" class="form-control input-lg">
+                                    <input placeholder="Case Name" name="caseName" id="caseName" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-9 col-xs-9">
                                 <div class="form-group">
                                     <label for="depOne" class="sr-only">Deponent One</label>
-                                    <input placeholder="Deponent One" id="depOne" type="text" class="form-control input-lg">
+                                    <input placeholder="Deponent One" name="depOne" id="depOne" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-3  col-xs-3">
                                 <div class="form-group">
                                     <label for="depOneTime" class="sr-only">Deponent One Time</label>
-                                    <input placeholder="Time" id="depOneTime" type="text" class="form-control input-lg">
+                                    <input placeholder="Time" name="depOneTime" id="depOneTime" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-9 col-xs-9">
                                 <div class="form-group">
                                     <label for="depTwo" class="sr-only">Deponent Two</label>
-                                    <input placeholder="Deponent Two" id="depTwo" type="text" class="form-control input-lg">
+                                    <input placeholder="Deponent Two" name="depTwo" id="depTwo" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-3  col-xs-3">
                                 <div class="form-group">
                                     <label for="depTwoTime" class="sr-only">Deponent Two Time</label>
-                                    <input placeholder="Time" id="depTwoTime" type="text" class="form-control input-lg">
+                                    <input placeholder="Time" name="depTwoTime" id="depTwoTime" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-9 col-xs-9">
                                 <div class="form-group">
                                     <label for="depThree" class="sr-only">Deponent Three</label>
-                                    <input placeholder="Deponent Three" id="depThree" type="text" class="form-control input-lg">
+                                    <input placeholder="Deponent Three" name="depThree" id="depThree" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-3  col-xs-3">
                                 <div class="form-group">
                                     <label for="depThreeTime" class="sr-only">Deponent Three Time</label>
-                                    <input placeholder="Time" id="depThreeTime" type="text" class="form-control input-lg">
+                                    <input placeholder="Time" name="depThreeTime" id="depThreeTime" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-9 col-xs-9">
                                 <div class="form-group">
                                     <label for="depFour" class="sr-only">Deponent Four</label>
-                                    <input placeholder="Deponent Four" id="depFour" type="text" class="form-control input-lg">
+                                    <input placeholder="Deponent Four" name="depFour" id="depFour" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-3  col-xs-3">
                                 <div class="form-group">
                                     <label for="depFourTime" class="sr-only">Deponent Four Time</label>
-                                    <input placeholder="Time" id="depFourTime" type="text" class="form-control input-lg">
+                                    <input placeholder="Time" name="depFourTime" id="depFourTime" type="text" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="comments" class="sr-only">Further Information</label>
-                                    <textarea placeholder="Comments" id="comments" class="form-control input-lg" rows="4"></textarea>
+                                    <textarea placeholder="Comments" name="comments" id="comments" class="form-control input-lg" rows="4"></textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="dateOfService" >Date of Service</label>
-                                    <input placeholder="Date of Service" id="dateOfService" type="date" class="form-control input-lg">
+                                    <input placeholder="Date of Service" name="dateOfService" id="dateOfService" type="date" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="dateOfTrial">Date of Trial</label>
-                                    <input placeholder="Date of Trial" id="dateOfTrial" type="date" class="form-control input-lg">
+                                    <input placeholder="Date of Trial" name="dateOfTrial" id="dateOfTrial" type="date" class="form-control input-lg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="videographerNeeded">Do you need a Videographer?</label>
-                                    <select id="videographerNeeded" class="form-control input-lg">
+                                    <select id="videographerNeeded" name="videographerNeeded" class="form-control input-lg">
                                         <option value="0">No</option>
                                         <option value="1">Yes</option>
                                     </select>

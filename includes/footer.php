@@ -8,7 +8,7 @@
                     <li><a href="#"><i class="ti-github"></i></a></li>
                     <li><a href="#"><i class="ti-linkedin"></i></a></li>
                 </ul>
-                <p class="no-margin-bottom text-center"> &copy; David Bates. Court reporting based in the state of Louisiana.
+                <p class="no-margin-bottom text-center"> &copy; David L Bates. Court reporting based in the state of Louisiana.
                 <br> For website enquiries, please contact addstevenson@hotmail.com. </p>
 
             </div>

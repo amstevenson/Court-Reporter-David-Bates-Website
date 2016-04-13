@@ -38,9 +38,6 @@ include_once("includes/header.php");
                                     <div class="row">
 
                                         <div class="col-md-6">
-                                            <a href="http://www.huntingtoncr.com/"><img src="images/huntington_logo.jpg" alt="Image" class="img-responsive"></a>
-                                        </div>
-                                        <div class="col-md-6">
                                             <p>
                                                 Huntington Court Reporters & Transcription, Inc.offers web-based transcription services
                                                 for Criminal Justice and Law Enforcement agencies throughout the United States. Huntington
@@ -50,6 +47,11 @@ include_once("includes/header.php");
                                                 Shorthand Reporters and steno-transcriptionists, and all have undergone background checks
                                                 and been fingerprinted.
                                             </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="http://www.huntingtoncr.com/"><img src="images/huntington_logo.jpg" alt="Image" class="img-responsive"></a>
+                                            <div class="spacer spacer-xs"></div>
+                                            <p class="text-center"><a href="http://www.huntingtoncr.com/" class="btn btn-primary btn-sm">View Website</a></p>
                                         </div>
 
                                     </div>
@@ -72,19 +74,20 @@ include_once("includes/header.php");
                         <p>To get in contact with me about general enquiries, please complete the form below. If you want to
                             hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
                         <div class="spacer spacer-xs"></div>
-                        <form method="post" action="#">
+                        <form method="post" action="scripts/contact_mail.php">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
-                                <input type="text" class="form-control input-lg text-center" id="name" placeholder="Name">
+                                <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email address</label>
-                                <input type="email" class="form-control input-lg text-center" id="email" placeholder="Email">
+                                <input type="email" class="form-control input-lg text-center" name="email" id="email" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label for="message" class="sr-only">Message</label>
-                                <textarea class="form-control input-lg text-center" id="message" placeholder="Message" rows="3" ></textarea>
+                                <textarea class="form-control input-lg text-center" name="message" id="message" placeholder="Message" rows="3" ></textarea>
                             </div>
+
                             <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send">
                         </form>
                     </div>

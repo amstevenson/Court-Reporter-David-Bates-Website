@@ -27,7 +27,7 @@
         <div class="container">
 
             <!-- START #logo -->
-            <h1 id="logo" class="pull-left"><a href="index.php">David Bates</a></h1>
+            <h1 id="logo" class="pull-left"><a href="index.php">David L Bates</a></h1>
 
             <!-- START #menu-wrap -->
             <nav id="menu-wrap" role="navigation">
