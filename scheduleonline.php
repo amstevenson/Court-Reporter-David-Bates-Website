@@ -25,10 +25,19 @@ include_once("includes/header.php");
 
         <div class="spacer spacer-sm"></div>
 
-        <div class="container">
+        <div class="container" id="schedule_thanks_message">
             <div class="row">
                 <div class="col-md-12 text-center ">
                     <p>Thank you for considering my services, if you fill out the form below I will endeavour to get back to you shortly. <br> </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The message that will appear after the user submits the form -->
+        <div style="display:none;" id="schedule_return_message_container">
+            <div class="row">
+                <div class="col-md-12 text-center " id="schedule_return_message">
+                    <!-- The inner data will be changed upon submission of the form -->
                 </div>
             </div>
         </div>
@@ -42,7 +51,7 @@ include_once("includes/header.php");
 
                     <div class="col-md-8">
 
-                        <form action="scripts/schedule_online_mail.php" method="post">
+                        <form method="post" id="schedule-form" action="scripts/schedule_online_mail.php" >
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="name" class="sr-only">Name</label>
@@ -223,7 +232,7 @@ include_once("includes/header.php");
                         </form>
 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" id="schedule_help_message">
                         <h3>Need Help?</h3>
                         <p>If filling out this form is not possible for any reason at all, or you prefer to send me a direct message, please use the email address provided below.</p>
                         <p>
@@ -233,7 +242,7 @@ include_once("includes/header.php");
 
                 </div>
 
-                <div class="container">
+                <div class="container" id = "schedule_mandatory_message">
                     <div class="row">
                         <div class="col-md-12">
                             <p> Please note that the fields marked with a star (*) are mandatory and that the submission of this form does not create an attorney-client relationship. Do not include confidential or sensitive information with your submission.<p>

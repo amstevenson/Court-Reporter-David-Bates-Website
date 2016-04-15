@@ -108,12 +108,12 @@ include_once("includes/header.php");
                 <section id="feature">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+                            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center" >
                                 <h2 class="uppercase-heading-fm">Get In Touch</h2>
-                                <p>To get in contact with me about general enquiries, please complete the form below. If you want to
+                                <p id="contact_return_message">To get in contact with me about general enquiries, please complete the form below. If you want to
                                 hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
                                 <div class="spacer spacer-xs"></div>
-                                <form method="post" action="scripts/contact_mail.php">
+                                <form method="post" action="scripts/contact_mail.php" id="contact-form">
                                     <div class="form-group">
                                         <label for="name" class="sr-only">Name</label>
                                         <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">

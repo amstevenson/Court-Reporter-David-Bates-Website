@@ -1,11 +1,28 @@
 <?php
 
-//
-// Check that all contact variables are set
-//
+// Required to return the status code and response message
+header('Content-Type: application/json');
+
+// Determine missing parameters
+$missingParams = array();
+
+if(empty($_POST['name']))
+    array_push($missingParams, "name");
+
+if(empty($_POST['email']))
+    array_push($missingParams, "email");
+
+if(empty($_POST['message']))
+    array_push($missingParams, "message");
+
+// Default response, with included errors (if any).
+$response = array('status_code' => '422', 'response_message' => 'Missing one or more required pieces of information: name, email and/or message.', 'response_errors' => $missingParams);
+
+// Check that all contact variables are set and that they are not empty
 if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
 
-    $message_to = 'BatesReport@gmail.com';
+    //$message_to = 'BatesReport@gmail.com';
+    $message_to = 'addstevenson@hotmail.com';
     $message_subject = 'Contact Form Submission - "Get In Touch" Section.';
     $message_username = $_POST['name'];
     $message_email = $_POST['email'];
@@ -43,10 +60,21 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) &
     //
     // Attempt to send message. If it's successful respond with success, otherwise failure.
     //
-    if(mail($message_to, $message_subject, $message_content, $message_headers))
-        echo "Message successfully sent! Your name, email address and message have been sent to my hotmail account. I will respond as quickly as possible.";
-    else
-        echo "Unfortunately there was an error sending the message, please contact this websites developer so we can resolve this issue (addstevenson@hotmail.com)";
+    if(mail($message_to, $message_subject, $message_content, $message_headers)) {
+        $response = array('status_code' => '200', 'response_message' => 'Your Inquiry has been emailed successfully, I will endeavour to get back to you shortly.' ,
+                                                                        'response_errors' => $missingParams);
+        echo json_encode($response);
+    }
+    else {
+        $response = array('status_code' => '400', 'response_message' => 'Unfortunately, a technical error has occurred.
+                                                                         Please contact addstevenson@hotmail.com for more
+                                                                          information, or try again.',
+                                                                          'response_errors' => $missingParams);
+
+        echo json_encode($response);
+
+
+    }
 }
     else
-        echo "You are missing one or more pieces of information, please ensure you have submitted a name, email and message.";
+        echo json_encode($response);

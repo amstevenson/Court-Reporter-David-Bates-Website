@@ -89,7 +89,7 @@ include_once("includes/header.php");
                         <p>To get in contact with me about general enquiries, please complete the form below. If you want to
                             hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
                         <div class="spacer spacer-xs"></div>
-                        <form method="post" action="scripts/contact_mail.php">
+                        <form method="post" action="scripts/contact_mail.php" id="contact-form">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
                                 <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
