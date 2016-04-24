@@ -35,16 +35,34 @@ include_once("includes/header.php");
                                 <li><i class="tab-menu-icon ti-notepad"></i>Sworn Statements</li>
                                 <li><i class="tab-menu-icon ti-user"></i>Hearings &amp Arbitrations</li>
                                 <li><i class="tab-menu-icon ti-pencil"></i>Conference Rooms</li>
-                                <li><i class="tab-menu-icon ti-video-camera"></i>Legal Videography</li>
                             </ul>
                             <div class="resp-tabs-container hor_1">
                                 <div>
                                     <div class="row">
 
                                         <div class="col-md-6">
-                                            <h3>Depositions</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam. Ipsa qui consequatur laborum culpa recusandae ullam repellendus, quod cum nemo consequuntur quidem labore minima dignissimos, eum!</p>
-                                        </div>
+                                            <div class="row">
+                                                <h3 class="uppercase-heading-fm text-center">Get In Touch</h3>
+                                                <p id="services_depositions_return_message">The average prices for this service are listed to the right, if you have any questions, please complete this form. If you want to
+                                                    hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
+                                                <div class="spacer spacer-xs"></div>
+                                                <form method="post" action="scripts/contact_mail.php" id="services-form-depositions">
+                                                    <div class="form-group">
+                                                        <label for="name" class="sr-only">Name</label>
+                                                        <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email" class="sr-only">Email address</label>
+                                                        <input type="email" class="form-control input-lg text-center" name="email" id="email" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message" class="sr-only">Message</label>
+                                                        <textarea class="form-control input-lg text-center" name="messageDepositions" id="messageDepositions" placeholder="Message" rows="3" ></textarea>
+                                                    </div>
+
+                                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send">
+                                                </form>
+                                            </div></div>
                                         <div class="col-md-6">
                                             <h3>Court Reporting Rates 2015</h3>
                                             <p><b>Court Reporter Appearance Fee (in addition to page rate)(first hour): $40.00</b></p>
@@ -61,8 +79,28 @@ include_once("includes/header.php");
                                     <div class="row">
 
                                         <div class="col-md-6">
-                                            <h3>Sworn Statements</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam. Ipsa qui consequatur laborum culpa recusandae ullam repellendus, quod cum nemo consequuntur quidem labore minima dignissimos, eum!</p>
+                                            <div class="row">
+                                                <h3 class="uppercase-heading-fm text-center">Get In Touch</h3>
+                                                <p id="services_statements_return_message">The average prices for this service are listed to the right, if you have any questions, please complete this form. If you want to
+                                                    hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
+                                                <div class="spacer spacer-xs"></div>
+                                                <form method="post" action="scripts/contact_mail.php" id="services-form-statements">
+                                                    <div class="form-group">
+                                                        <label for="name" class="sr-only">Name</label>
+                                                        <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email" class="sr-only">Email address</label>
+                                                        <input type="email" class="form-control input-lg text-center" name="email" id="email" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message" class="sr-only">Message</label>
+                                                        <textarea class="form-control input-lg text-center" name="messageStatements" id="messageStatements" placeholder="Message" rows="3" ></textarea>
+                                                    </div>
+
+                                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send">
+                                                </form>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <h3>Court Reporting Rates 2015</h3>
@@ -77,9 +115,28 @@ include_once("includes/header.php");
                                     <div class="row">
 
                                         <div class="col-md-6">
-                                            <h3>Hearings &amp Arbitrations</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam. Ipsa qui consequatur laborum culpa recusandae ullam repellendus, quod cum nemo consequuntur quidem labore minima dignissimos, eum!</p>
-                                        </div>
+                                            <div class="row">
+                                                <h3 class="uppercase-heading-fm text-center">Get In Touch</h3>
+                                                <p id="services_hearings_return_message">The average prices for this service are listed to the right, if you have any questions, please complete this form. If you want to
+                                                    hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
+                                                <div class="spacer spacer-xs"></div>
+                                                <form method="post" action="scripts/contact_mail.php" id="services-form-hearings">
+                                                    <div class="form-group">
+                                                        <label for="name" class="sr-only">Name</label>
+                                                        <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email" class="sr-only">Email address</label>
+                                                        <input type="email" class="form-control input-lg text-center" name="email" id="email" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message" class="sr-only">Message</label>
+                                                        <textarea class="form-control input-lg text-center" name="messageHearings" id="messageHearings" placeholder="Message" rows="3" ></textarea>
+                                                    </div>
+
+                                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send">
+                                                </form>
+                                            </div> </div>
                                         <div class="col-md-6">
                                             <h3>Court Reporting Rates 2015</h3>
                                             <p><b>Court Reporter Appearance Fee (in addition to page rate)(first hour): $50.00</b></p>
@@ -91,27 +148,35 @@ include_once("includes/header.php");
                                 </div>
                                 <div>
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <h2 class="h3">Conference Rooms</h2>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h3 class="uppercase-heading-fm text-center">Get In Touch</h3>
+                                                <p id="services_conference_return_message">The average prices for this service are listed to the right, if you have any questions, please complete this form. If you want to
+                                                    hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
+                                                <div class="spacer spacer-xs"></div>
+                                                <form method="post" action="scripts/contact_mail.php" id="services-form-conference">
+                                                    <div class="form-group">
+                                                        <label for="name" class="sr-only">Name</label>
+                                                        <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email" class="sr-only">Email address</label>
+                                                        <input type="email" class="form-control input-lg text-center" name="email" id="email" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message" class="sr-only">Message</label>
+                                                        <textarea class="form-control input-lg text-center" name="messageConference" id="messageConference" placeholder="Message" rows="3" ></textarea>
+                                                    </div>
+
+                                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send">
+                                                </form>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam.</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>To be confirmed - would Huntingdon offices be involved in these services?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h2 class="h3">Legal Videographies</h2>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam.</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>To be confirmed - would Huntingdon offices be involved in these services?</p>
+                                            <h3>Court Reporting Rates 2015</h3>
+                                            <p>Provided by Huntington Court Reporters:</p>
+                                            <p>"We provide conference rooms at our Natchitoches office. There is a charge of
+                                                $25.00 per hour with a two-hour minimum."</p>
                                         </div>
                                     </div>
                                 </div>
@@ -121,35 +186,6 @@ include_once("includes/header.php");
                     <div class="spacer spacer-md"></div>
                     <!-- END Tabs -->
 
-                </div>
-            </div>
-        </section>
-
-        <section id="feature">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
-                        <h2 class="uppercase-heading-fm">Get In Touch</h2>
-                        <p>To get in contact with me about general enquiries, please complete the form below. If you want to
-                            hire me for any of my services, please refer to the <a href = "scheduleonline.php"> "schedule online"</a> section of this website.</p>
-                        <div class="spacer spacer-xs"></div>
-                        <form method="post" action="scripts/contact_mail.php" id="contact-form">
-                            <div class="form-group">
-                                <label for="name" class="sr-only">Name</label>
-                                <input type="text" class="form-control input-lg text-center" name="name" id="name" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email address</label>
-                                <input type="email" class="form-control input-lg text-center" name="email" id="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="sr-only">Message</label>
-                                <textarea class="form-control input-lg text-center" name="message" id="message" placeholder="Message" rows="3" ></textarea>
-                            </div>
-
-                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send">
-                        </form>
-                    </div>
                 </div>
             </div>
         </section>

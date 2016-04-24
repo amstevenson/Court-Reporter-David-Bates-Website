@@ -28,7 +28,7 @@ include_once("includes/header.php");
         <div class="container" id="schedule_thanks_message">
             <div class="row">
                 <div class="col-md-12 text-center ">
-                    <p>Thank you for considering my services, if you fill out the form below I will endeavour to get back to you shortly. <br> </p>
+                    <p>Fill out the form below to reserve my services.  I will contact you to confirm your request. <br> </p>
                 </div>
             </div>
         </div>

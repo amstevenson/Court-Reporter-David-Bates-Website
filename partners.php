@@ -40,10 +40,14 @@ include_once("includes/header.php");
                                         <div class="col-md-6">
                                             <p>
                                                 Huntington Court Reporters & Transcription, Inc.offers web-based transcription services
-                                                for Criminal Justice and Law Enforcement agencies throughout the United States. Huntington
+                                                for Criminal Justice and Law Enforcement agencies throughout the United States.
+                                            </p>
+                                            <p>Huntington
                                                 understands the commitment of law enforcement departments to individuals' confidentiality,
                                                 and we pride ourselves on our three secured facilities and onsite transcription staffs for
-                                                those agencies that request a secured facility. Most of our transcriptionists are Certified
+                                                those agencies that request a secured facility.
+                                            </p>
+                                            <p> Most of our transcriptionists are Certified
                                                 Shorthand Reporters and steno-transcriptionists, and all have undergone background checks
                                                 and been fingerprinted.
                                             </p>

@@ -3,7 +3,15 @@
 // Required to return the status code and response message
 header('Content-Type: application/json');
 
+// Multiple forms appear on one single page (services) and therefore multiple
+// message identifiers have been used.
+// Cycle through those and if we have a match, ignore the stipulation below to print
+// out an error, since normally we would only be looking for 'message'.
+// Param: $messageSetNotEmpty keeps track of all of this.
+$messageSetNotEmpty = false;
+
 // Determine missing parameters
+// Possible combinations = name, email, message, messageConference, messageHearings, messageStatements, messageDepositions
 $missingParams = array();
 
 if(empty($_POST['name']))
@@ -14,21 +22,59 @@ if(empty($_POST['email']))
 
 if(empty($_POST['message']))
     array_push($missingParams, "message");
+else {
+    $messageSetNotEmpty = true;
+}
+
+if(empty($_POST['messageConference']) && !isset($_POST['messageConference']) && !$messageSetNotEmpty)
+    array_push($missingParams, "messageConference");
+else {
+    $messageSetNotEmpty = true;
+}
+
+if(empty($_POST['messageHearings']) && !isset($_POST['messageHearings']) && !$messageSetNotEmpty)
+    array_push($missingParams, "messageHearings");
+else {
+    $messageSetNotEmpty = true;
+}
+
+if(empty($_POST['messageStatements']) && !isset($_POST['messageStatements']) && !$messageSetNotEmpty)
+    array_push($missingParams, "messageStatements");
+else {
+    $messageSetNotEmpty = true;
+}
+
+if(empty($_POST['messageDepositions']) && !isset($_POST['messageDepositions']) && !$messageSetNotEmpty)
+    array_push($missingParams, "or message depositions inquiry ");
+else {
+    $messageSetNotEmpty = true;
+}
 
 // Default response, with included errors (if any).
 $response = array('status_code' => '422', 'response_message' => 'Missing one or more required pieces of information: name, email and/or message.', 'response_errors' => $missingParams);
 
 // Check that all contact variables are set and that they are not empty
-if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+if(isset($_POST['name']) && isset($_POST['email']) && !empty($_POST['name']) && !empty($_POST['email']) && $messageSetNotEmpty) {
 
-    //$message_to = 'BatesReport@gmail.com';
-    $message_to = 'addstevenson@hotmail.com';
+    $message_to = 'BatesReport@gmail.com';
+    //$message_to = 'addstevenson@hotmail.com'; // TEST EMAIL 
     $message_subject = 'Contact Form Submission - "Get In Touch" Section.';
     $message_username = $_POST['name'];
     $message_email = $_POST['email'];
     $message_headers = "MIME-Version: 1.0" . "\r\n";
     $message_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $message_headers .= 'From: <webmaster@davidbates.com>' . "\r\n";
+
+    // Get the value for the $_POST message.
+    $messageTag = '';
+
+    if(!empty($_POST['message'])) $messageTag = 'message';
+    if(!empty($_POST['messageConference'])) $messageTag = 'messageConference';
+    if(!empty($_POST['messageHearings'])) $messageTag = 'messageHearings';
+    if(!empty($_POST['messageStatements'])) $messageTag = 'messageStatements';
+    if(!empty($_POST['messageDepositions'])) $messageTag = 'messageDepositions';
+
+    // Comprise the returned message for the email, with stylings etc.
     $message_content =
 
     '
@@ -49,7 +95,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) &
         <th style="text-align: left">Email: '.$message_email.'</th>
     </tr>
     <tr>
-        <th style="text-align: left">Message: '.wordwrap($_POST['message'], 70).' </th>
+        <th style="text-align: left">Message: '.wordwrap($_POST[$messageTag], 70).' </th>
     </tr>
     </table>
     </body>

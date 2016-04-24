@@ -24,8 +24,8 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone']) 
     $message_username = $_POST['name'];
     $message_email = $_POST['email'];
     $message_phone = $_POST['phone'];
-    //$message_to = 'BatesReport@gmail.com';
-    $message_to = 'addstevenson@hotmail.com';
+    $message_to = 'BatesReport@gmail.com';
+    //$message_to = 'addstevenson@hotmail.com'; // TEST EMAIL
     $message_subject = 'Schedule Online Form Submission - David L. Bates';
     $message_headers = "MIME-Version: 1.0" . "\r\n";
     $message_headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";

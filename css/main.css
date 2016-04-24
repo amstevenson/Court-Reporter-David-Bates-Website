@@ -178,6 +178,55 @@ textarea {
     }
 }
 
+#main {
+    margin-top: 600px;
+    padding-top: 50px;
+    z-index: 102;
+    position: relative;
+    background: #ffffff;
+}
+@media screen and (max-width: 768px) {
+    #main {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+}
+
+body.inner-page #main {
+    margin-top: 400px;
+}
+@media screen and (max-width: 768px) {
+    body.inner-page #main {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+}
+
+#header-image,
+#main,
+#logo-mobile-wrap {
+    -moz-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+body.mobile-menu-visible #header-image,
+body.mobile-menu-visible #main,
+body.mobile-menu-visible #logo-mobile-wrap {
+    -moz-transform: translateX(275px);
+    -webkit-transform: translateX(275px);
+    -ms-transform: translateX(275px);
+    transform: translateX(275px);
+}
+
+body.mobile-menu-visible #mobile-menu {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
 /****************************************************************************************************************************
 *                                                   NAVIGATION                                                              *
 *****************************************************************************************************************************/
@@ -1194,55 +1243,6 @@ body.inner-page #header-image .header-image-wrap {
     }
 }
 
-#main {
-    margin-top: 600px;
-    padding-top: 50px;
-    z-index: 102;
-    position: relative;
-    background: #ffffff;
-}
-@media screen and (max-width: 768px) {
-    #main {
-        margin-top: 0;
-        padding-top: 20px;
-    }
-}
-
-body.inner-page #main {
-    margin-top: 400px;
-}
-@media screen and (max-width: 768px) {
-    body.inner-page #main {
-        margin-top: 0;
-        padding-top: 20px;
-    }
-}
-
-#header-image,
-#main,
-#logo-mobile-wrap {
-    -moz-transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-    -ms-transform: translateX(0px);
-    transform: translateX(0px);
-}
-
-body.mobile-menu-visible #header-image,
-body.mobile-menu-visible #main,
-body.mobile-menu-visible #logo-mobile-wrap {
-    -moz-transform: translateX(275px);
-    -webkit-transform: translateX(275px);
-    -ms-transform: translateX(275px);
-    transform: translateX(275px);
-}
-
-body.mobile-menu-visible #mobile-menu {
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-}
-
 /****************************************************************************************************************************
 *                                                    SPACING                                                                *
 *****************************************************************************************************************************/
@@ -1514,16 +1514,20 @@ body.mobile-menu-visible #mobile-menu {
 .feature-2 .feature-title {
     letter-spacing: 2px;
 }
-.feature-2 .feature-icon {
+.feature-2 .feature-icon, .feature-icon-btn-hover {
     text-align: center;
     display: block;
     margin-bottom: 20px;
 }
-.feature-2 .feature-icon i {
+.feature-2 .feature-icon i{
     font-size: 50px;
     color: #28bbf8;
 }
-.feature-2 .feature-icon.circle {
+.feature-2 .feature-icon-btn-hover i{
+    font-size: 50px;
+    color: #079edf;
+}
+.feature-2 .feature-icon.circle, .feature-icon-btn-hover.circle {
     display: table;
     width: 100px;
     height: 100px;
@@ -1535,7 +1539,7 @@ body.mobile-menu-visible #mobile-menu {
     -o-border-radius: 50%;
     border-radius: 50%;
 }
-.feature-2 .feature-icon.circle i {
+.feature-2 .feature-icon.circle i, .feature-icon-btn-hover.circle i{
     display: table-cell;
     vertical-align: middle;
     font-size: 40px;

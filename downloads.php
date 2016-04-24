@@ -34,7 +34,7 @@ include_once("includes/header.php");
 
                     <div class="col-md-6 col-sm-6 feature-item">
                         <h3 class="text-center feature-title h4 text-uppercase">Side One</h3>
-                        <img src="files/side1.jpg" alt="Image" class="img-responsive text-center">
+                        <img src="files/side1.jpg" alt="Image" class="img-responsive align-center" style="width: 400px">
 
                         <div class="spacer spacer-lg"></div>
 
@@ -44,7 +44,7 @@ include_once("includes/header.php");
 
                     <div class="col-md-6 col-sm-6 feature-item">
                         <h3 class="text-center feature-title h4 text-uppercase">Side Two</h3>
-                        <img src="files/side2edit.jpg" alt="Image" class="img-responsive">
+                        <img src="files/side2edit.jpg" alt="Image" class="img-responsive align-center" style="width: 280px">
 
                         <div class="spacer spacer-sm"></div>
 
@@ -58,11 +58,11 @@ include_once("includes/header.php");
 
                     <div class="col-md-6 col-sm-6 feature-item">
                         <h3 class="text-center feature-title h4 text-uppercase">The Bates Report Rates</h3>
-                        <p class="text-center feature-description">A comprehensive listing of all of my services and the prices I charge. Please note the 10% discount you will recieve from being a customer of The Bates Report for networked services.</p>
+                        <p class="text-center feature-description">A comprehensive listing of all of my services and the prices I charge.</p>
                         <p class="text-center"><a href="files/THE%20BATES%20REPORT_RATES.docx" class="btn btn-primary btn-sm" download>Download</a></p>
                     </div>
                     <div class="col-md-6 col-sm-6 feature-item">
-                        <h3 class="text-center feature-title h4 text-uppercase">Huntington Deposition Networking Rates</h3>
+                        <h3 class="text-center feature-title h4 text-uppercase">Huntington Networking Rates</h3>
                         <p class="text-center feature-description">A list of all services offered my Huntington with all coverage areas included towards the bottom of the document. For pricing enquiries about videographers and conference rooms, download this. </p>
                         <p class="text-center"><a href="files/HCR_2015_DEPOSITION_NETWORKING_RATE_SHEET.pdf" class="btn btn-primary btn-sm" download>Download</a></p>
                     </div>
@@ -73,7 +73,7 @@ include_once("includes/header.php");
 
                     <div class="col-md-6 col-sm-6 feature-item">
                         <h3 class="text-center feature-title h4 text-uppercase">Bates Report Charge Form</h3>
-                        <p class="text-center feature-description">If you want to download, fill out a charge form and send it to be, instead of completing the <a href = "scheduleonline.php"> online scheduling form </a> then this is the download for you. </p>
+                        <p class="text-center feature-description">If you want to fill out a charge form instead of scheduling my <a href = "scheduleonline.php"> services online</a>, then this is the download for you. </p>
                         <p class="text-center"><a href="files/BatesReportCharge.pdf" class="btn btn-primary btn-sm" download>Download</a></p>
                     </div>
 

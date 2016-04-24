@@ -269,6 +269,34 @@
 
                             break;
 
+                        case 'services-form-hearings':
+
+                            document.getElementById('services-form-hearings').style.display = 'none';
+                            document.getElementById('services_hearings_return_message').innerHTML = '<h3>' + response['response_message'] + '</h3>';
+
+                            break;
+
+                        case 'services-form-statements':
+
+                            document.getElementById('services-form-statements').style.display = 'none';
+                            document.getElementById('services_statements_return_message').innerHTML = '<h3>' + response['response_message'] + '</h3>';
+
+                            break;
+
+                        case 'services-form-conference':
+
+                            document.getElementById('services-form-conference').style.display = 'none';
+                            document.getElementById('services_conference_return_message').innerHTML = '<h3>' + response['response_message'] + '</h3>';
+
+                            break;
+
+                        case 'services-form-depositions':
+
+                            document.getElementById('services-form-depositions').style.display = 'none';
+                            document.getElementById('services_depositions_return_message').innerHTML = '<h3>' + response['response_message'] + '</h3>';
+
+                            break;
+
                         default:
                             break;
                     }
@@ -281,7 +309,11 @@
                     var amountOfErrors = response['response_errors'].length;
                     var formElements;
                     if(event.target.id == 'schedule-form') formElements = ['name', 'email', 'phone'];
-                    if(event.target.id == 'contact-form') formElements = ['name', 'email', 'message'];
+                    else if(event.target.id == 'contact-form') formElements = ['name', 'email', 'message'];
+                    else if(event.target.id == 'services-form-depositions') formElements = ['name', 'email', 'messageDepositions'];
+                    else if(event.target.id == 'services-form-hearings') formElements = ['name', 'email', 'messageHearings'];
+                    else if(event.target.id == 'services-form-conference') formElements = ['name', 'email', 'messageConference'];
+                    else if(event.target.id == 'services-form-statements') formElements = ['name', 'email', 'messageStatements'];
 
                     // Restore defaults to form elements that have been successfully updated.
                     for (var j = 0; j < formElements.length; j++)
@@ -351,11 +383,26 @@
         // This is where we deal with what happens after a form is submitted.
         console.log('contact form submission handler loaded successfully');
 
-        if(document.location.href.match(/[^\/]+$/)[0] == 'scheduleonline.php')
+        if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'scheduleonline.php')
         {
             // Schedule form: bind to the submit event of our form
             var scheduleForm = document.getElementById('schedule-form');
             scheduleForm.addEventListener("submit", handleFormSubmit, false);
+        }
+        else if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'services.php')
+        {
+            // Services forms: hearing, statements, conference, depositions; bind to the submit event of these forms.
+            var servicesFormHearings = document.getElementById('services-form-hearings');
+            servicesFormHearings.addEventListener("submit", handleFormSubmit, false);
+
+            var servicesFormStatements = document.getElementById('services-form-statements');
+            servicesFormStatements.addEventListener("submit", handleFormSubmit, false);
+
+            var servicesFormConference = document.getElementById('services-form-conference');
+            servicesFormConference.addEventListener("submit", handleFormSubmit, false);
+
+            var servicesFormDepositions = document.getElementById('services-form-depositions');
+            servicesFormDepositions.addEventListener("submit", handleFormSubmit, false);
         }
         else
         {
@@ -366,8 +413,92 @@
 
     }
 
-    // After the page has loaded, assign the form event listeners
-    document.addEventListener('DOMContentLoaded', loaded, false);
+    function hoverChangeCss(id, dataTarget, classHover, classNormal){
+
+        $(id).hover(function() {
+
+            // On hover, change color to same shade as highlighted button
+            document.getElementById(dataTarget).className = classHover;
+
+        }, function() {
+
+            // On hover end, reset background color to white
+            document.getElementById(dataTarget).className = classNormal;
+        });
+    }
+
+
+    // When buttons are hovered over in the main page, this function changes the above icons colours
+    function highlightIcons(){
+
+        if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'index.php') {
+
+            var buttons = document.getElementsByClassName("btn btn-primary btn-sm");
+
+            for (var i = 0; i < buttons.length; i++) {
+
+                var id = "#" + buttons[i].id;
+                var dataTarget = $(id).attr('data-target');
+
+                hoverChangeCss(id, dataTarget, 'feature-icon-btn-hover circle', 'feature-icon circle');
+
+            }
+        }
+
+    }
+
+    // Auto populate each message box on the services page, with an auto response text
+    function populateServiceFormsText(){
+
+        if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'services.php') {
+
+            // Derive elements
+            var classes = document.getElementsByClassName("form-control input-lg text-center");
+            var idElements = [];
+
+            // Get todays date
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if(dd<10) {
+                dd='0'+dd
+            }
+
+            if(mm<10) {
+                mm='0'+mm
+            }
+
+            today = mm+'/'+dd+'/'+yyyy;
+
+            // Cycle through elements to select the ones we need (because for some reason the getElementsByIds method is fiddly and strange).
+            for(var i = 0; i < classes.length; i++){
+
+                if(classes[i].id == 'messageConference'){ idElements.push(classes[i]) } else
+                if(classes[i].id == 'messageDepositions'){ idElements.push(classes[i]) } else
+                if(classes[i].id == 'messageStatements'){ idElements.push(classes[i]) } else
+                if(classes[i].id == 'messageHearings') idElements.push(classes[i])
+            }
+
+            // Change the default text of the message boxes on the services page to RE: *service name* / *date*
+            for(var j = 0; j < idElements.length; j++){
+
+                var elementValue = '';
+
+                switch(idElements[j].name){
+
+                    case 'messageConference': elementValue = "RE: Conference rooms, to take place on " + today + "."; break;
+                    case 'messageDepositions': elementValue = "RE: Depositions, to take place on " + today + "."; break;
+                    case 'messageStatements': elementValue = "RE: Statements, to take place on " + today + "."; break;
+                    case 'messageHearings': elementValue = "RE: Hearings to take place on " + today + "."; break;
+                    default: break;
+                }
+
+                idElements[j].value = elementValue;
+            }
+        }
+    }
 
     $(function(){
 
@@ -382,8 +513,12 @@
         owlCrouselFeatureSlide();
         windowResize();
         windowScroll();
-
+        highlightIcons();
+        populateServiceFormsText();
 
     });
+
+    // After the page has loaded, assign the form event listeners
+    document.addEventListener('DOMContentLoaded', loaded, false);
 
 }());
